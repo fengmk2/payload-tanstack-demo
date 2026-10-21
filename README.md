@@ -35,6 +35,7 @@ With a global `vp` installation, use `vp install`, `vp dev`, `vp check`, and
 
 ```bash
 pnpm exec vp check       # formatting, lint, and TypeScript checks
+pnpm exec vp test        # unit tests
 pnpm exec vp fmt         # apply formatting
 pnpm exec vp build       # production application build
 pnpm exec vp run start   # preview the production build
@@ -44,7 +45,7 @@ Formatting and lint settings live in `vite.config.ts`. Generated Payload and
 TanStack files keep their generator's formatting. `pnpm-workspace.yaml` contains
 the Vite+ catalog and the Vite alias required by framework plugins.
 
-GitHub Actions runs `vp check` and `vp build` as separate jobs on pull requests
+GitHub Actions runs `vp check`, `vp test`, and `vp build` as separate jobs on pull requests
 and pushes to `main`.
 
 `vp dev` and `vp test` run the built-in development server and Vitest runner.
@@ -53,10 +54,10 @@ this project's `NODE_OPTIONS`, and `vp run generate:types` invokes Payload's typ
 generator. The `packageManager` field selects pnpm for `vp install`, `vp add`,
 and `vp remove`.
 
-There are no Vitest test files, coverage suites, benchmarks, or library builds
-in this demo. `vp test` currently reports that no tests were found. To run the
-existing browser screenshot check, configure the database and start the dev
-server, then run:
+Unit tests cover the Payload data serialization used by server functions. There
+are no coverage suites, benchmarks, or library builds in this demo. To run the
+browser screenshot check, configure the database and start the dev server, then
+run:
 
 ```bash
 pnpm exec playwright install chromium

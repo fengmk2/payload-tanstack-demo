@@ -20,7 +20,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 
-export const Pages: CollectionConfig<'pages'> = {
+export const Pages = {
   slug: 'pages',
   access: {
     create: authenticated,
@@ -138,4 +138,4 @@ export const Pages: CollectionConfig<'pages'> = {
     },
     maxPerDoc: 50,
   },
-}
+} satisfies CollectionConfig<'pages'>

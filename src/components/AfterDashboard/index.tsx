@@ -5,7 +5,7 @@ import { Banner } from '@payloadcms/ui/elements/Banner'
 
 const AfterDashboard: React.FC = () => {
   return (
-    <Banner type="info">
+    <Banner type="default">
       <h4>Custom Components Test — After Dashboard (Client)</h4>
       <p style={{ marginTop: '0.5rem' }}>
         This <code>afterDashboard</code> component is a <strong>client component</strong> registered

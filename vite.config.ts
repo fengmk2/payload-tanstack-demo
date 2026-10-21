@@ -72,5 +72,12 @@ export default defineConfig((env) => ({
       'src/migrations/index.ts',
     ],
   },
-  ...payloadConfig(env),
+  test: {
+    server: {
+      // Payload's server exports import UI styles that Vite must transform in tests.
+      deps: { inline: [/@payloadcms\//] },
+    },
+  },
+  // Unit tests do not need the application's database and development servers.
+  ...(process.env.VITEST ? {} : payloadConfig(env)),
 }))
