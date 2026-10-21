@@ -1,17 +1,18 @@
 import { createServerFn } from '@tanstack/react-start'
+import { serializePayloadData } from '@/utilities/serializePayloadData'
 
 export const getHeaderData = createServerFn({ method: 'GET' }).handler(async () => {
   const config = (await import('@payload-config')).default
   const { getPayload } = await import('payload')
   const payload = await getPayload({ config })
-  return await payload.findGlobal({ slug: 'header', depth: 1 })
+  return serializePayloadData(await payload.findGlobal({ slug: 'header', depth: 1 }))
 })
 
 export const getFooterData = createServerFn({ method: 'GET' }).handler(async () => {
   const config = (await import('@payload-config')).default
   const { getPayload } = await import('payload')
   const payload = await getPayload({ config })
-  return await payload.findGlobal({ slug: 'footer', depth: 1 })
+  return serializePayloadData(await payload.findGlobal({ slug: 'footer', depth: 1 }))
 })
 
 export const getPageBySlug = createServerFn({ method: 'GET' })
@@ -30,7 +31,7 @@ export const getPageBySlug = createServerFn({ method: 'GET' })
       where: { slug: { equals: data.slug } },
     })
 
-    return result.docs?.[0] || null
+    return serializePayloadData(result.docs.at(0) ?? null)
   })
 
 export const getPosts = createServerFn({ method: 'GET' })
@@ -40,7 +41,7 @@ export const getPosts = createServerFn({ method: 'GET' })
     const { getPayload } = await import('payload')
     const payload = await getPayload({ config })
 
-    return await payload.find({
+    const result = await payload.find({
       collection: 'posts',
       depth: 1,
       limit: 12,
@@ -48,6 +49,7 @@ export const getPosts = createServerFn({ method: 'GET' })
       overrideAccess: false,
       select: { title: true, slug: true, categories: true, meta: true },
     })
+    return serializePayloadData(result)
   })
 
 export const getPostBySlug = createServerFn({ method: 'GET' })
@@ -66,7 +68,7 @@ export const getPostBySlug = createServerFn({ method: 'GET' })
       where: { slug: { equals: data.slug } },
     })
 
-    return result.docs?.[0] || null
+    return serializePayloadData(result.docs.at(0) ?? null)
   })
 
 export const getArchivePosts = createServerFn({ method: 'GET' })
@@ -76,7 +78,7 @@ export const getArchivePosts = createServerFn({ method: 'GET' })
     const { getPayload } = await import('payload')
     const payload = await getPayload({ config })
 
-    return await payload.find({
+    const result = await payload.find({
       collection: 'posts',
       depth: 1,
       limit: data.limit || 3,
@@ -84,6 +86,7 @@ export const getArchivePosts = createServerFn({ method: 'GET' })
         ? { where: { categories: { in: data.categories } } }
         : {}),
     })
+    return serializePayloadData(result)
   })
 
 export const searchPosts = createServerFn({ method: 'GET' })
@@ -93,7 +96,7 @@ export const searchPosts = createServerFn({ method: 'GET' })
     const { getPayload } = await import('payload')
     const payload = await getPayload({ config })
 
-    return await payload.find({
+    const result = await payload.find({
       collection: 'search',
       depth: 1,
       limit: 12,
@@ -112,4 +115,5 @@ export const searchPosts = createServerFn({ method: 'GET' })
           }
         : {}),
     })
+    return serializePayloadData(result)
   })

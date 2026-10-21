@@ -8,6 +8,7 @@ export const image1: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
       children: [
         {
           type: 'paragraph',
+          textStyle: '',
           children: [
             {
               type: 'text',

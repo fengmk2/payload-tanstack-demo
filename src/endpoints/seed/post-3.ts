@@ -17,6 +17,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           {
             type: 'block',
             fields: {
+              id: crypto.randomUUID(),
               blockName: 'Disclaimer',
               blockType: 'banner',
               content: {
@@ -25,6 +26,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                   children: [
                     {
                       type: 'paragraph',
+                      textStyle: '',
                       children: [
                         {
                           type: 'text',
@@ -125,6 +127,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           },
           {
             type: 'paragraph',
+            textStyle: '',
             children: [
               {
                 type: 'text',
@@ -145,6 +148,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           {
             type: 'block',
             fields: {
+              id: crypto.randomUUID(),
               blockName: '',
               blockType: 'mediaBlock',
               media: blockImage.id,
@@ -173,6 +177,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           },
           {
             type: 'paragraph',
+            textStyle: '',
             children: [
               {
                 type: 'text',
@@ -192,6 +197,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           },
           {
             type: 'paragraph',
+            textStyle: '',
             children: [
               {
                 type: 'text',
@@ -212,6 +218,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
           {
             type: 'block',
             fields: {
+              id: crypto.randomUUID(),
               blockName: 'Dynamic components',
               blockType: 'banner',
               content: {
@@ -220,6 +227,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                   children: [
                     {
                       type: 'paragraph',
+                      textStyle: '',
                       children: [
                         {
                           type: 'text',

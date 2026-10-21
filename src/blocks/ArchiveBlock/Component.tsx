@@ -16,10 +16,12 @@ export const ArchiveBlock: React.FC<
   let posts: Post[] = resolvedPosts || []
 
   if (populateBy !== 'collection' && selectedDocs?.length) {
-    posts = selectedDocs.map((post) => {
-      if (typeof post.value === 'object') return post.value
-      return undefined
-    }).filter(Boolean) as Post[]
+    posts = selectedDocs
+      .map((post) => {
+        if (typeof post.value === 'object') return post.value
+        return undefined
+      })
+      .filter(Boolean) as Post[]
   }
 
   return (

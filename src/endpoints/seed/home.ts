@@ -59,6 +59,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
             },
             {
               type: 'paragraph',
+              textStyle: '',
               children: [
                 {
                   type: 'link',
@@ -204,6 +205,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   },
                   {
                     type: 'paragraph',
+                    textStyle: '',
                     children: [
                       {
                         type: 'text',
@@ -289,6 +291,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   },
                   {
                     type: 'paragraph',
+                    textStyle: '',
                     children: [
                       {
                         type: 'text',
@@ -342,6 +345,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   },
                   {
                     type: 'paragraph',
+                    textStyle: '',
                     children: [
                       {
                         type: 'text',
@@ -395,6 +399,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   },
                   {
                     type: 'paragraph',
+                    textStyle: '',
                     children: [
                       {
                         type: 'text',
@@ -480,6 +485,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   },
                   {
                     type: 'paragraph',
+                    textStyle: '',
                     children: [
                       {
                         type: 'text',
@@ -542,6 +548,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
               },
               {
                 type: 'paragraph',
+                textStyle: '',
                 children: [
                   {
                     type: 'text',
@@ -607,6 +614,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
               },
               {
                 type: 'paragraph',
+                textStyle: '',
                 children: [
                   {
                     type: 'text',

@@ -26,7 +26,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 
-export const Posts: CollectionConfig<'posts'> = {
+export const Posts = {
   slug: 'posts',
   access: {
     create: authenticated,
@@ -236,7 +236,7 @@ export const Posts: CollectionConfig<'posts'> = {
       name: 'slug',
       type: 'slug',
       useAsSlug: 'title',
-    }
+    },
   ],
   hooks: {
     afterChange: [revalidatePost],
@@ -248,10 +248,10 @@ export const Posts: CollectionConfig<'posts'> = {
       autosave: {
         // We set this to a small interval for optimal live preview
         // Temporarily disabled due to autosave race conditions, causing bad slug field generation
-        // interval: 100, 
+        // interval: 100,
       },
       schedulePublish: true,
     },
     maxPerDoc: 50,
   },
-}
+} satisfies CollectionConfig<'posts'>

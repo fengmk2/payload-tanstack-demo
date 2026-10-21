@@ -1,12 +1,9 @@
 import React from 'react'
+import type { CodeBlock as CodeBlockData } from '@/payload-types'
 
 import { Code } from './CodeClient'
 
-export type CodeBlockProps = {
-  code: string
-  language?: string
-  blockType: 'code'
-}
+export type CodeBlockProps = Pick<CodeBlockData, 'code' | 'language' | 'blockType'>
 
 type Props = CodeBlockProps & {
   className?: string
@@ -15,7 +12,7 @@ type Props = CodeBlockProps & {
 export const CodeBlock: React.FC<Props> = ({ className, code, language }) => {
   return (
     <div className={[className, 'not-prose'].filter(Boolean).join(' ')}>
-      <Code code={code} language={language} />
+      <Code code={code} language={language ?? undefined} />
     </div>
   )
 }

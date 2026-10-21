@@ -31,6 +31,7 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
           },
           {
             type: 'paragraph',
+            textStyle: '',
             children: [
               {
                 type: 'link',

@@ -25,8 +25,8 @@ export const Categories: CollectionConfig = {
       type: 'slug',
       useAsSlug: 'title',
       admin: {
-        position: undefined
-      }
-    }
+        position: undefined,
+      },
+    },
   ],
 }

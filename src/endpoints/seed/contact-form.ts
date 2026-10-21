@@ -43,6 +43,7 @@ export const contactForm: RequiredDataFromCollectionSlug<'forms'> = {
           children: [
             {
               type: 'paragraph',
+              textStyle: '',
               children: [
                 {
                   type: 'text',
