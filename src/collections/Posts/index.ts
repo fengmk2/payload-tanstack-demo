@@ -236,7 +236,7 @@ export const Posts: CollectionConfig<'posts'> = {
       name: 'slug',
       type: 'slug',
       useAsSlug: 'title',
-    }
+    },
   ],
   hooks: {
     afterChange: [revalidatePost],
@@ -248,7 +248,7 @@ export const Posts: CollectionConfig<'posts'> = {
       autosave: {
         // We set this to a small interval for optimal live preview
         // Temporarily disabled due to autosave race conditions, causing bad slug field generation
-        // interval: 100, 
+        // interval: 100,
       },
       schedulePublish: true,
     },

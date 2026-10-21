@@ -16,5 +16,7 @@ async function getGlobal<T extends Global>(slug: T, depth = 0): Promise<DataFrom
   return global
 }
 
-export const getCachedGlobal = <T extends Global>(slug: T, depth = 0) =>
-  () => getGlobal<T>(slug, depth)
+export const getCachedGlobal =
+  <T extends Global>(slug: T, depth = 0) =>
+  () =>
+    getGlobal<T>(slug, depth)

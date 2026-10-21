@@ -21,5 +21,5 @@ async function getDocument(collection: Collection, slug: string, depth = 0) {
   return page.docs[0]
 }
 
-export const getCachedDocument = (collection: Collection, slug: string) =>
-  () => getDocument(collection, slug)
+export const getCachedDocument = (collection: Collection, slug: string) => () =>
+  getDocument(collection, slug)

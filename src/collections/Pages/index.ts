@@ -120,7 +120,7 @@ export const Pages: CollectionConfig<'pages'> = {
       name: 'slug',
       type: 'slug',
       useAsSlug: 'title',
-    }
+    },
   ],
   hooks: {
     afterChange: [revalidatePage],
@@ -132,7 +132,7 @@ export const Pages: CollectionConfig<'pages'> = {
       autosave: {
         // We set this to a small interval for optimal live preview
         // Temporarily disabled due to autosave race conditions, causing bad slug field generation
-        // interval: 100, 
+        // interval: 100,
       },
       schedulePublish: true,
     },

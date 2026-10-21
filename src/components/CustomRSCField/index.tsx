@@ -98,8 +98,8 @@ export default function CustomRSCField({
           color: 'var(--theme-elevation-400, #94a3b8)',
         }}
       >
-        Characters: {charCount} | Document title:{' '}
-        {(data?.title as string) || 'untitled'} | Type: {field?.type ?? 'text'}
+        Characters: {charCount} | Document title: {(data?.title as string) || 'untitled'} | Type:{' '}
+        {field?.type ?? 'text'}
       </div>
     </div>
   )
